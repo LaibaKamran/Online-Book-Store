@@ -1,0 +1,96 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int* triple(int i, int j, int m, int k, int n)
+{
+        int* arr=new int[n][n];
+    
+    if(i==0 || j==0)
+    {
+        arr[i][j]=m;
+        return arr[i][j];
+    }
+    else if(i==j)
+    {
+        arr[i][j]=triple(i-1, j-1, m ,k, n)+k;
+        
+    }
+    else if(i>j)
+    {
+        arr[i][j]=triple(i-1, j, m ,k, n)-1;
+    }
+    else{
+        arr[i][j]=triple(i, j-1, m ,k, n)-1;
+    }
+    
+    return arr;
+}
+
+int main() {
+    int n,m,k;
+    cin >>n>>m>>k;
+    
+    int* a=new int[n][m];
+    a=triple(n-1,n-1,m,k,n);
+    
+    for(int i=0; i<n;i++)
+    {
+        for(int j=0;j<i;j++)
+        {
+               cout << a[i][j] ;
+        }
+     
+}
+    return 0;
+}
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int* triple(int i, int j, int m, int k, int n)
+{
+        int* arr=new int[n][n];
+    
+    if(i==0 || j==0)
+    {
+        arr[i][j]=m;
+        return arr[i][j];
+    }
+    else if(i==j)
+    {
+        arr[i][j]=triple(i-1, j-1, m ,k, n)+k;
+        
+    }
+    else if(i>j)
+    {
+        arr[i][j]=triple(i-1, j, m ,k, n)-1;
+    }
+    else{
+        arr[i][j]=triple(i, j-1, m ,k, n)-1;
+    }
+    
+    return arr;
+}
+
+int main() {
+    int n,m,k;
+    cin >>n>>m>>k;
+    
+    int* a=new int[n][m];
+    a=triple(n-1,n-1,m,k,n);
+    
+    for(int i=0; i<n;i++)
+    {
+        for(int j=0;j<i;j++)
+        {
+               cout << a[i][j] ;
+        }
+     
+}
+    return 0;
+}
